@@ -44,22 +44,19 @@ let array = [
 
 const a = array.filter(array => array.gender === 'male')
 const b = array.filter(array => array.gender === 'female')
-// const a1 = a.reduce((total, amount, array) => {
-//     total += amount.poin;
-//     return total / array.length
-// })
-let sum = 0
-for (let i = 0; i < a.length; i++) {
-    sum += a[i].poin
-}
-let tb = sum / a.length
 
-let sum1 = 0
-for (let i = 0; i < b.length; i++) {
-    sum1 += b[i].poin
-}
-let v = sum1 / b.length
+const a1 = a.reduce((x, y) =>
+        (x + y.poin)
+    , 0)
+const a2 = a1 / a.length
+
+const b1 = b.reduce((z, y) =>
+        (z + y.poin)
+    , 0)
+const b2 = b1 / b.length
+
 console.log(`So Hoc Sinh Nam : ${a.length}`)
-console.log(`Diem Trung Binh Cua Nam: ${tb}`)
+console.log(`Diem Trung Binh Cua Nam: ${a2}`)
 console.log(`So Hoc Sinh Nu: ${b.length}`)
-console.log(`Diem Trung Binh Nu: ${v}`)
+console.log(`Diem Trung Binh Nu: ${b2}`)
+
